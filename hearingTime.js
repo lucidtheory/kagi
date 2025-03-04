@@ -33,10 +33,11 @@ console.log("Time to run:", end - start);
 
 /*
 Optimization journey:
-- First I tried splitting the array and sorting it
-- After splitting the array and sorting I would
+- First I tried splitting the string and sorting it
+- After splitting the string and sorting I would
 iterate through the array and find the index where
-my name was alphabetically meant to be (myName > name[index])
+my name was alphabetically meant to be (myName < name[index])
+with a forloop, breaking early as needed.
 -This was adding more constants and so instead I put
 myName inside of the string and then did the split and sort
 - This method was a hair faster.
@@ -44,7 +45,7 @@ myName inside of the string and then did the split and sort
 that would be creating a new array which would be slower. i.e:
 [...people.split(' '), myName].sort()
 - I tried string interpolation, but it seemed to slow
-the benchmark.
+the benchmark vs concatonation.
 - I had a lot of constants set at first, but I felt that
 they were increasing the memory so I removed them all
 - This reduces the legibility but seemed to get the code

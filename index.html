@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            gap: 20px;
+            padding: 20px; 
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        .recipe-card {
+            width: 250px;
+            padding: 0px 15px 15px 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .recipe-card h2 {
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        .recipe-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 10px;
+        }
+        /* Do not show <details> toggle by default */
+        details {
+            display: none;
+            text-align: center;
+        }
+        /* Show <details> toggle when 10+ items*/
+        .recipe-card:has(ul li:nth-child(11)) details {
+            display: inline;
+        }
+
+        /* Hide n > 10 elements when <details> is closed */
+        .recipe-card:not(:has(details[open])) ul li:nth-child(n+11) {
+            display: none;
+        }
+        details[open] .show-more {
+            display: none;
+        }
+        details:not([open]) .show-less {
+            display: none;
+        }
+        summary {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="recipe-card">
+        <h2>Meat Lasagna Recipe</h2>
+        <ul>
+            <li>
+                <input type="checkbox" id="sausage">
+                <label for="sausage">Italian sausage</label>
+            </li>
+            <li>
+                <input type="checkbox" id="beef">
+                <label for="beef">Ground beef</label>
+            </li>
+            <li>
+                <input type="checkbox" id="onion">
+                <label for="onion">Minced onion</label>
+            </li>
+            <li>
+                <input type="checkbox" id="garlic">
+                <label for="garlic">Garlic</label>
+            </li>
+            <li>
+                <input type="checkbox" id="tomatoes">
+                <label for="tomatoes">Tomatoes</label>
+            </li>
+            <li>
+                <input type="checkbox" id="paste">
+                <label for="paste">Tomato paste</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce">
+                <label for="sauce">Tomato sauce</label>
+            </li>
+            <li>
+                <input type="checkbox" id="water">
+                <label for="water">Water</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sugar">
+                <label for="sugar">Sugar</label>
+            </li>
+            <li>
+                <input type="checkbox" id="basil">
+                <label for="basil">Basil leaves</label>
+            </li>
+        </ul>
+      <details>
+        <summary>
+            <span class="show-more">Show more</span>
+            <span class="show-less">Show less</span>
+        </summary>
+      </details>  
+    </div>
+    <div class="recipe-card">
+        <h2>Meat Lasagna Recipe</h2>
+        <ul>
+            <li>Italian sausage</li>
+            <li>Ground beef</li>
+            <li>Minced onion</li>
+            <li>Garlic</li>
+            <li>Tomatoes</li>
+            <li>Tomato paste</li>
+            <li>Tomato sauce</li>
+            <li>Water</li>
+            <li>Sugar</li>
+            <li>Basil leaves</li>
+            <li>Fennel seeds</li>
+            <li>Noodles</li>
+            <li>Parmesan cheese</li>
+            <li>Eggs</li>
+            <li>Pepper</li>
+        </ul>
+      <details>
+        <summary>
+            <span class="show-more">Show more</span>
+            <span class="show-less">Show less</span>
+        </summary>
+      </details>  
+    </div>
+</body>
+</html>

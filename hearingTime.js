@@ -9,10 +9,10 @@ const hearingEndTime = (
         ((
             // Append myName to people (string interpolation was slower)
             otherPeople + ' ' + myName
-        // sort and find index of name, and 1 for total people
+        // sort and find index of name
         ).split(' ')
         .sort()
-        .indexOf(myName) + 1)
+        .indexOf(myName) + 1) // add 1 for total people
         // Divide inclusive total by number of judges
         / numJudges
     // Math.ceil for total hearing blocks * time per hearing

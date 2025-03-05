@@ -42,6 +42,26 @@
         .recipe-card:not(:has(details[open])) ul li:nth-child(n+11) {
             display: none;
         }
+        .recipe-text {
+            line-height: 1.5;
+            /* Default display 10 lines */
+            max-height: calc(1.5em * 10);
+            overflow: hidden;
+            -webkit-line-clamp: 10;
+            line-clamp: 10;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
+        /* Show full recipe text when details open */
+        .recipe-card:has(details[open]) .recipe-text {
+            max-height: none;
+            -webkit-line-clamp: unset;
+            line-clamp: unset;
+        }
+        /* Show <details> toggle by default for recipe text cards */
+        .recipe-card:has(.recipe-text) details {
+            display: block;
+        }
         details[open] .show-more {
             display: none;
         }
@@ -108,22 +128,80 @@
     <div class="recipe-card">
         <h2>Meat Lasagna Recipe</h2>
         <ul>
-            <li>Italian sausage</li>
-            <li>Ground beef</li>
-            <li>Minced onion</li>
-            <li>Garlic</li>
-            <li>Tomatoes</li>
-            <li>Tomato paste</li>
-            <li>Tomato sauce</li>
-            <li>Water</li>
-            <li>Sugar</li>
-            <li>Basil leaves</li>
-            <li>Fennel seeds</li>
-            <li>Noodles</li>
-            <li>Parmesan cheese</li>
-            <li>Eggs</li>
-            <li>Pepper</li>
+            <li>
+                <input type="checkbox" id="sausage">
+                <label for="sausage">Italian sausage</label>
+            </li>
+            <li>
+                <input type="checkbox" id="beef">
+                <label for="beef">Ground beef</label>
+            </li>
+            <li>
+                <input type="checkbox" id="onion">
+                <label for="onion">Minced onion</label>
+            </li>
+            <li>
+                <input type="checkbox" id="garlic">
+                <label for="garlic">Garlic</label>
+            </li>
+            <li>
+                <input type="checkbox" id="tomatoes">
+                <label for="tomatoes">Tomatoes</label>
+            </li>
+            <li>
+                <input type="checkbox" id="paste">
+                <label for="paste">Tomato paste</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce">
+                <label for="sauce">Tomato sauce</label>
+            </li>
+            <li>
+                <input type="checkbox" id="water">
+                <label for="water">Water</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sugar">
+                <label for="sugar">Sugar</label>
+            </li>
+            <li>
+                <input type="checkbox" id="basil">
+                <label for="basil">Basil leaves</label>
+            </li>
+            <li>
+                <input type="checkbox" id="fennel">
+                <label for="fennel">Fennel seeds</label>
+            </li>
+            <li>
+                <input type="checkbox" id="noodles">
+                <label for="noodles">Noodles</label>
+            </li>
+            <li>
+                <input type="checkbox" id="cheese">
+                <label for="cheese">Parmesan cheese</label>
+            </li>
+            <li>
+                <input type="checkbox" id="eggs">
+                <label for="eggs">Eggs</label>
+            </li>
+            <li>
+                <input type="checkbox" id="pepper">
+                <label for="pepper">Pepper</label>
+            </li>
         </ul>
+      <details>
+        <summary>
+            <span class="show-more">Show more</span>
+            <span class="show-less">Show less</span>
+        </summary>
+      </details>  
+    </div>
+    <div class="recipe-card">
+    <h2>Meat Lasagna Instructions</h2>
+        <p class="recipe-text">
+            Bacon ipsum dolor amet landjaeger tongue beef pastrami leberkas. Shank chuck burgdoggen biltong meatloaf sirloin pastrami frankfurter alcatra. Ribeye corned beef burgdoggen bresaola sirloin flank jerky filet mignon shoulder short loin pig hamburger ball tip. T-bone jowl pork loin turkey.
+            Rump prosciutto pork loin chicken, ham hock ground round jowl. Rump meatloaf pork belly flank, prosciutto meatball andouille. Ham hamburger tenderloin, kielbasa chislic turducken drumstick pork belly ham hock buffalo venison pork chop salami jerky. Burgdoggen frankfurter alcatra, tail filet mignon buffalo porchetta ground round meatloaf tri-tip chuck beef ribs.
+        </p>
       <details>
         <summary>
             <span class="show-more">Show more</span>
